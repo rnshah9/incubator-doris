@@ -1,0 +1,11 @@
+project: incubator-doris
+target: incubator-doris
+image: ghcr.io/rnshah9/playground:incubator-doris
+testsuite:
+  - file://test
+#t
+cmds:
+  - cmd: /repo/be/build_Release/src/tools/meta_tool --operation=show_segment_footer --file=/test
+    filepath: /test
+    env:
+      DISABLE_SMOKETEST: '1'
